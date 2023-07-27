@@ -1,4 +1,4 @@
-VPC == Virtual Private  clodu
+VPC == Virtual Private  cloud
 
 hostname -I ==> it will show the private ip address
                                                         Reserve IP Addresses
@@ -12,3 +12,7 @@ A) Each and every subnet will loose 5 ip's. so total consumable ip's are 251 onl
 	.255 for broadcast ip address
 	.2 used for dns purpose
 	.3 reserved by aws (for future purpose)
+__________________________________________________________________________________________________________________________
+Q2)How do you differentiate b/t public subnet and private subnet..?
+	A)public subnet will exposed to internet gateway whereas private subnet will not exposed to IGW
+	  both subnets will interacts internally
