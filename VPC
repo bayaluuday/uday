@@ -1,1 +1,14 @@
+VPC == Virtual Private  clodu
 
+hostname -I ==> it will show the private ip address
+                                                        Reserve IP Addresses
+                                                      -------------------------
+Q1) Whenever you create the subnet How many connsumable ips you will get
+A) Each and every subnet will loose 5 ip's. so total consumable ip's are 251 only.
+	where are this ip's are going
+	-----------------------------
+	.0 we cannot connot consume it . it will be taken as network ip
+	.1 Default gateway ip
+	.255 for broadcast ip address
+	.2 used for dns purpose
+	.3 reserved by aws (for future purpose)
