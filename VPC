@@ -2,7 +2,8 @@ VPC == Virtual Private  cloud
 
 hostname -I ==> it will show the private ip address
                                                         Reserve IP Addresses
-                                                      -------------------------
+						       -------------------------
+__________________________________________________________________________________________________________________________
 Q1) Whenever you create the subnet How many connsumable ips you will get
 A) Each and every subnet will loose 5 ip's. so total consumable ip's are 251 only.
 	where are this ip's are going
@@ -16,3 +17,4 @@ ________________________________________________________________________________
 Q2)How do you differentiate b/t public subnet and private subnet..?
 	A)public subnet will exposed to internet gateway whereas private subnet will not exposed to IGW
 	  both subnets will interacts internally
+__________________________________________________________________________________________________________________________
