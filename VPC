@@ -18,3 +18,4 @@ Q2)How do you differentiate b/t public subnet and private subnet..?
 	A)public subnet will exposed to internet gateway whereas private subnet will not exposed to IGW
 	  both subnets will interacts internally
 __________________________________________________________________________________________________________________________
+
