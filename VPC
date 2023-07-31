@@ -18,4 +18,9 @@ Q2)How do you differentiate b/t public subnet and private subnet..?
 	A)public subnet will exposed to internet gateway whereas private subnet will not exposed to IGW
 	  both subnets will interacts internally
 __________________________________________________________________________________________________________________________
+Q3) Explan abot your 2 tier application
 
+Q4) How do you connect from ine ec2 server to another ec2 internally
+A)	First we need to imprt pem key
+	1.echo """ ---paste pem key here---""" > mykey.pem
+	2.test
