@@ -23,5 +23,9 @@ Q3) Explan abot your 2 tier application
 Q4) How do you connect from ine ec2 server to another ec2 internally
 A)	First we need to imprt pem key
 	1.echo """ ---paste pem key here---""" > mykey.pem
-	2.test
-drgndkgndkg
+	2.chmod 600 mykey.pem
+	then
+	3.ssh -i ec2-user@Private ip addresss of db server
+			--or--
+	ssh -i /root/mykey.pem ec2-user@Private ip
+__________________________________________________________________________________________________________________________
