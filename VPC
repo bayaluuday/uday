@@ -24,3 +24,4 @@ Q4) How do you connect from ine ec2 server to another ec2 internally
 A)	First we need to imprt pem key
 	1.echo """ ---paste pem key here---""" > mykey.pem
 	2.test
+drgndkgndkg
