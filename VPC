@@ -27,5 +27,5 @@ A)	First we need to imprt pem key
 	then
 	3.ssh -i ec2-user@Private ip addresss of db server
 			--or--
-	ssh -i /root/mykey.pem ec2-user@Private ip
+	ssh -i /root/mykey.pem ec2-user@Private ip  
 __________________________________________________________________________________________________________________________
