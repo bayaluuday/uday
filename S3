@@ -12,3 +12,10 @@ Q2) Different types of storage classes
        2) Infrequent access (Charged less)
        3) glacier (1year ,2year like) (Cheapest storage class)
 ___________________________________________________________________________________________________________________________________
+Q3) How to enable bucket versioning
+
+Select the bucket for which you want to enable versioning.
+Click on the "Properties" tab in the bucket details page.
+Under the "Advanced settings" section, click on "Versioning."
+In the Versioning settings, select "Enable" to enable versioning for the bucket.
+Click on the "Save changes" button to apply the changes.
