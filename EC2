@@ -1,2 +1,13 @@
-ec2 is elastic compute cloud
-mbvbdm xvmdfv
+How to attach EBS volume to ec2 instance
+
+create volume in ec2 section  ==> attach it to ec2
+lsblk
+blkid if it is not ext4 then format it
+mkfs.ext4 /dev/xvdf  (xvdf = disk name) 
+mkdir /app2      (/app2 is a mount point)
+mount -t ext4 /dev/xvdf /app2
+df -hT /app1    (to check whether it is mounted or not)
+
+echo "Hi boss" > /app1/uday.txt
+cat /app1/udaya.txt
+ 
