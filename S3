@@ -1,1 +1,14 @@
+                                                 S3
+Q1) Difference b/t EBS and S3
+  A)    EBS is local to Ec2 intance only 
+        EBS is a block storage (we cant play movie here)
 
+        S3 is global in nature
+        you can access data from anywhere LIke google drive
+        S3 is a object storage
+___________________________________________________________________________________________________________________________________        
+Q2) Different types of storage classes
+  A)   i) Frequently accessed data (Charged more amount)
+       2) Infrequent access (Charged less)
+       3) glacier (1year ,2year like) (Cheapest storage class)
+___________________________________________________________________________________________________________________________________
