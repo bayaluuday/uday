@@ -29,3 +29,16 @@ A)	First we need to imprt pem key
 			--or--
 	ssh -i /root/mykey.pem ec2-user@Private ip  
 __________________________________________________________________________________________________________________________
+Q5) Difference b/t Security group and NACL
+
+      1)SG are staefull sets(If u allow inbound u dont need to enable outbond)
+	controlled at server level
+	In SG we dont have explicit deny option
+
+
+      2)Nacl are stateless (You have define inbound and outbond seperately)
+	nacl at subnet level
+        In Nacl we have explicit deny option
+
+__________________________________________________________________________________________________________________________
+
