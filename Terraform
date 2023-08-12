@@ -1,0 +1,2 @@
+terraform init ==> terraform initialization it will bring down all dependency packages required for a terraform to run aws provider code.
+                    whi means if u give ls -l after trerraform init there will be .terraform file
