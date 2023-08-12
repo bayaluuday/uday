@@ -1,2 +1,79 @@
-terraform init ==> terraform initialization it will bring down all dependency packages required for a terraform to run aws provider code.
+terraform init   ==> terraform initialization it will bring down all dependency packages required for a terraform to run aws provider code.
                     whi means if u give ls -l after trerraform init there will be .terraform file
+terraform plan   ==> for testing purpose. If incase there i any issues or errors it will show
+terraform apply  ==> 
+terraform show ==> it will bring data in terraform.state file
+
+
+aws configure ===
+_________________
+you need to configure aws with iam public access key and private access key then only terraform createds resources in that 
+particular account
+
+terraform.tfstate
+__________________________
+terraform will store its entire memory in a file called terraform.tfstate file
+terraform.tfstate is the file which will have entire state of terraform
+terraform destroy ==> to delete resources which it created last
+
+sections in terraform
+_________________________________
+                                  1) Providers section
+                                ***********************
+terraform supports multiple vendors like aws, azure,gcp,oracle,ibm
+so it is our resposinbility to inform terraform that for whom ur devoloping the code..
+in my case iam devloping the code for aws so hence in provider section iam tellig iam workimg for aws..
+
+                                 2)resource section
+                              ***********************
+aws resources = ec2,vpc,s3 ,rds ...etc all
+
+to create a keypair == 
+
+create a file called mycode.tf and paste below content there
+(((( -------                    ----------    -----------------------   
+module "key_pair" {
+  source = "terraform-aws-modules/key-pair/aws"
+
+  key_name   = "deployer-three"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3F6tyPEFEzV0LX3X8BsXdMsQz1x2cEikKDEY0aIj41qgxMCP/iteneqXSIFZBp5vizPvaoIR3Um9xK7PGoW8giupGn+EPuxIA4cDM4vzOqOkiMPhz5XK0whEjkVzTo4+S0puvDZuwIsdiW9mxhJc7tgBNL0cYlWSYVkz4G/fslNfRPW5mYAM49f4fhtxPb5ok4Q2Lg9dPKVHO/Bgeu5woMc7RY0p1ej6D4CKFE6lymSDJpW0YHX/wqE9+cfEauh7xZcG0q9t2ta6F6fmX0agvpFyZo8aFbXeUBr7osSCJNgvavWbM/06niWrOvYX2xwWdhXmXSrbX8ZbabVohBK41 email@example.com"
+}
+)))------------
+
+                                3) Variable section
+                                ***********************
+1)  variable "myvar1" {
+        default = 20
+    }
+                                       declare a value intially and get output
+    output "myvar1_value"{
+      value =var.myvar1
+    }
+
+*********************************************************************************************************
+2)  variable "myvar1" {
+    }
+                                       declare a value at execution time 
+    output "myvar1_value"{
+      value =var.myvar1
+*********************************************************************************************************
+3)  variable "myvar1"{}
+    variable "myvar2"{}
+    variable "myvar3"{}
+
+output "myvar1_value"{
+value= "${var.myvar1},${var.myvar2},${var.myvar3}"
+}
+
+before this u have to cleeate one file called anyname.tfvars (to give all variables values in this file)
+vi varvalues.tfvars
+myvar1=100
+myvar2=200
+myvar3=300
+
+terraform apply -var -file varvalues.tfvars
+
+}
+
+
+
