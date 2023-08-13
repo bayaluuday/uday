@@ -127,9 +127,26 @@ keyname ="udayboss"
 publickey="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQXIZRWPXJIZRomi5KcTaZVfc7f5MUQNfnPovMGr9P+l3jvLNxwKjv6SmHvly34CimRZe7bDle9s4TVZhc1Ksn/fa5PfTeHKBsi9c8rh5agxgUYiUbSNlF7g8aDl8fhZn6VTKWtk/xH7g80Wa+G6CNYq8XAajTAcac0aJAEBHpnrRH1eAHOmm8Ye0glt2B6iKRhGWMaCiBNDhpqVvXYI/6rSuVvfO8Y2Joh3XsCgaK+sePasNLRh1lxctGtGwEzZkXDwP0yft/ocM/ZFKI6L+noarjvwqmrEHsMEkVaMLcRvQSrLNqSTkTpsEeDcMkiR6oPugLbVv7+LcMzUO3WrFz imported-openssh-key"
 
 ------------------------------------------------------------------------------------------
+					creating 3 keypairs
+					-------------------
+resource "aws_key_pair" "deployer" {
+count=3
+key_name   ="keypair-${count.index}"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3F6tyPEFEzV0LX3X8BsXdMsQz1x2cEikKDEY0aIj41qgxMCP/iteneqXSIFZBp5vizPvaoIR3Um9xK7PGoW8giupGn+EPuxIA4cDM4vzOqOkiMPhz5XK0whEjkVzTo4+S0puvDZuwIsdiW9mxhJc7tgBNL0cYlWSYVkz4G/fslNfRPW5mYAM49f4fhtxPb5ok4Q2Lg9dPKVHO/Bgeu5woMc7RY0p1ej6D4CKFE6lymSDJpW0YHX/wqE9+cfEauh7xZcG0q9t2ta6F6fmX0agvpFyZo8aFbXeUBr7osSCJNgvavWbM/06niWrOvYX2xwWdhXmXSrbX8ZbabVohBK41 email@example.com"
+} 
 
+2nd type
+--------
+variable "mykeys"{
+type = list
+default = ["hari","uday","boss"]
+}
 
-
+resource "aws_key_pair" "deployer" {
+count=3
+key_name   = element(var.mykeys,count.index)
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3F6tyPEFEzV0LX3X8BsXdMsQz1x2cEikKDEY0aIj41qgxMCP/iteneqXSIFZBp5vizPvaoIR3Um9xK7PGoW8giupGn+EPuxIA4cDM4vzOqOkiMPhz5XK0whEjkVzTo4+S0puvDZuwIsdiW9mxhJc7tgBNL0cYlWSYVkz4G/fslNfRPW5mYAM49f4fhtxPb5ok4Q2Lg9dPKVHO/Bgeu5woMc7RY0p1ej6D4CKFE6lymSDJpW0YHX/wqE9+cfEauh7xZcG0q9t2ta6F6fmX0agvpFyZo8aFbXeUBr7osSCJNgvavWbM/06niWrOvYX2xwWdhXmXSrbX8ZbabVohBK41 email@example.com"
+}
 
 
 
